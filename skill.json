@@ -1,0 +1,197 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "comet flight",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": [
+                        "fallback"
+                    ]
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "cancel"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "stop"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": [
+                        "navigate home"
+                    ]
+                },
+                {
+                    "name": "GetFlightIntent",
+                    "slots": [],
+                    "samples": [
+                        "find total flights",
+                        "get total number of flight",
+                        "get flight number"
+                    ]
+                },
+                {
+                    "name": "HelloWorldIntent",
+                    "slots": [],
+                    "samples": [
+                        "hello world"
+                    ]
+                },
+                {
+                    "name": "GetFlightToSpecificIntent",
+                    "slots": [
+                        {
+                            "name": "destination",
+                            "type": "AMAZON.US_CITY",
+                            "samples": [
+                                "find flight to {destination}",
+                                "i'd like to go to {destination}",
+                                "{destination}"
+                            ]
+                        },
+                        {
+                            "name": "start",
+                            "type": "AMAZON.US_CITY"
+                        }
+                    ],
+                    "samples": [
+                        "find a flight to {destination}",
+                        "get flight to {destination}",
+                        "get flight to {destination} from {start}"
+                    ]
+                },
+                {
+                    "name": "GetFlightToSpecificOnDateIntent",
+                    "slots": [
+                        {
+                            "name": "destination",
+                            "type": "AMAZON.US_CITY",
+                            "samples": [
+                                "i'd like to flight to {destination}",
+                                "{destination}"
+                            ]
+                        },
+                        {
+                            "name": "start",
+                            "type": "AMAZON.US_CITY"
+                        },
+                        {
+                            "name": "departure",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "can you find a flight on {departure} to {destination}",
+                        "get a flight from {destination} to {start} on {departure}"
+                    ]
+                },
+                {
+                    "name": "GetAddressIntent",
+                    "slots": [],
+                    "samples": [
+                        "get address"
+                    ]
+                },
+                {
+                    "name": "GetRecentTicketIntent",
+                    "slots": [],
+                    "samples": [
+                        "what is the recent flight that I have",
+                        "Get my tickets"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "GetFlightToSpecificIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "destination",
+                            "type": "AMAZON.US_CITY",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.389810755352.1407302722435"
+                            }
+                        },
+                        {
+                            "name": "start",
+                            "type": "AMAZON.US_CITY",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "GetFlightToSpecificOnDateIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "destination",
+                            "type": "AMAZON.US_CITY",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.526667070833.1071117045706"
+                            }
+                        },
+                        {
+                            "name": "start",
+                            "type": "AMAZON.US_CITY",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "departure",
+                            "type": "AMAZON.DATE",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.389810755352.1407302722435",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which city do you like to flight to?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.526667070833.1071117045706",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which city do you like to flight to?"
+                    }
+                ]
+            }
+        ]
+    }
+}
